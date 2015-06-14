@@ -1,0 +1,34 @@
+===[ Conceptual Overview ]===
+For onboard sensors (ones connected directly to the Pi)
+Sensor Interface --{ JSON }--> Connector --> Database
+
+For remote sensors (connected via another uController)
+Microcontroller:
+[ (start of Sensor Interface) Sensor Interface --> Connector --> Transmitter
+Pi:
+Receiver (end of Sensor Interface) ] --{ JSON }--> Connector --> Database
+
+
+===[ Example setup ]===
+Outdoor Unit (remote sensors):
+* Oil Level * Barometer * Outside Temperature   * Battery Voltage
+
+Indoor Unit:
+Intake Humidity (and Heat Intensity)
+Outflow Humidity (and Heat Intensity)
+Intake Temperature
+Outflow Temperature
+
+Fan Speed (and Fan Power)
+
+Electrical Power Consumption
+20x Temperatur Sensors
+
+
+===[ Sensor Table ]===
+Sensor  |   Location    |   Zone    |   System
+            Oil Tank       Outside    Ventilation
+            Projector     Living Rm     Nature
+            Hall Vent      Kitchen      Heating
+               ...           ...       Electrical
+
