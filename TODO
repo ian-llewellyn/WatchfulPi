@@ -1,0 +1,22 @@
+[ ] Test MySQL Initialisation
+[ ] Write Python connector DB inserter
+
+[ ] Test remaining sensors
+    [ ] bmp180
+    [ ] ds18b20
+    [ ] fz0409
+    [ ] rx433 & tx433
+
+[ ] Hookup and test Arduino Local Sensors
+
+[ ] Web Service(s)
+    [ ] Decisions
+    [ ] Builds
+
+[ ] Web Interface
+    [ ] framework + skeleton pages
+    [ ] Dashboard
+    [ ] Systems Page
+    [ ] Zones Page
+
+[ ] System Setup - Web + Code-load
