@@ -11,24 +11,31 @@ Receiver (end of Sensor Interface) ] --{ JSON }--> Connector --> Database
 
 ===[ Example setup ]===
 Outdoor Unit (remote sensors):
-* Oil Level * Barometer * Outside Temperature   * Battery Voltage
+* Oil Level
+* Barometer
+* Outside Temperature
+* Battery Voltage
 
 Indoor Unit:
-Intake Humidity (and Heat Intensity)
-Outflow Humidity (and Heat Intensity)
-Intake Temperature
-Outflow Temperature
+* Intake Humidity (and Heat Intensity)
+* Outflow Humidity (and Heat Intensity)
+* Intake Temperature
+* Outflow Temperature
 
-Fan Speed (and Fan Power)
+* Fan Speed (and Fan Power)
 
-Electrical Power Consumption
-20x Temperatur Sensors
+* Electrical Power Consumption
+* 20x Temperatur Sensors
 
 
-===[ Sensor Table ]===
-Sensor  |   Location    |   Zone    |   System
-            Oil Tank       Outside    Ventilation
-            Projector     Living Rm     Nature
-            Hall Vent      Kitchen      Heating
-               ...           ...       Electrical
+===[ Database ]===
+ID  |  Sensor Type  |   Location    |   Zone    |   System
+                        Oil Tank       Outside    Ventilation
+                        Projector     Living Rm     Nature
+                        Hall Vent      Kitchen      Heating
+                           ...           ...       Electrical
+
+ID  |   Timestamp   |   Sensor ID   |   Reading
+   2015-06-28T11:01:00      23           18.7
+
 
