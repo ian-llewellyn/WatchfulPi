@@ -9,6 +9,26 @@ Pi:
 Receiver (end of Sensor Interface) ] --{ JSON }--> Connector --> Database
 
 
+===[ JSON Message Format }===
+{"measurement": {
+    "id": 23,
+    "reading": 17.2
+}}
+OR
+{"measurements": [
+    {
+        "id": 23,
+        "reading": 15.7
+    },{
+        "id": 14,
+        "reading": 78.4
+    },{
+        "id": 16,
+        "reading": 49.1
+    }
+]}
+
+
 ===[ Example setup ]===
 Outdoor Unit (remote sensors):
 * Oil Level

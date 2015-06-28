@@ -1,0 +1,20 @@
+Arduino:
+* Oil Level | HC-SR04   | distance (cm) |   A04
+* Barometer |   BMP180  | pressure (hPa)|   D07
+* Outside Temperature   | BMP180    |   temperature ('C)    |   D07
+* Battery Voltage   |   Native  |   voltage (V) | A05
+
+Raspberry Pi:
+* Intake Humidity               |   DHT22   |  humidity (%RH)   |   GPIO17
+* Intake Heat Intensity         |   DHT22   |                   |   GPIO17
+* Intake Temperature            |   DHT22   | temperature ('C)  |   GPIO17
+* Outflow Humidity              |   DHT22   |  humidity (%RH)   |   GPIO23
+* Outflow Heat Intensity        |   DHT22   |                   |   GPIO23
+* Outflow Temperature           |   DHT22   | temperature ('C)  |   GPIO23
+
+* Fan Speed                     |           |  velocity (m/s)   |   GPIO24
+* Fan Power                     |           |    power (W)      |   GPIO25
+
+* Electrical Power Consumption  | OWL CHM30 |    power (W)      |   GPIO14
+* 20x Temperatur Sensors        |  DS18B20  | temperature ('C)  |   GPIO15
+
