@@ -122,6 +122,8 @@ function db_details_submit(obj) {
       </div>
       <p>Here we define the various types of measurement sensors we have, and where they are connected to: a GPIO locally on the Raspberry Pi, or to pins on a remote microcontroller - an Arduino for example.</p>
 
+      <button class="btn btn-lg btn-primary">Save assignment</button>
+
       <div class="page-header">
         <h1>Download Code</h1>
       </div>
@@ -166,6 +168,16 @@ function db_details_submit(obj) {
         <option>30 minutes</option>
         <option>1 hour</option>
       </select></p>
+      <button class="btn btn-lg btn-primary">Save schedule</button>
+
+      <div class="page-header">
+        <h1>Import and Export Data</h1>
+      </div>
+      <p>This utility allows you to import data that you have already stored in a file. Alternatively, once the system has been up and running for a while, you may export the data out of it and import it into another/rebuilt system.</p>
+
+      <input class="input-lg" type="file">
+      <button class="btn btn-lg btn-primary">Import file</button>
+      <button class="btn btn-lg btn-primary">Export data</button>
 
       <div class="page-header">
         <h1>Buttons</h1>
