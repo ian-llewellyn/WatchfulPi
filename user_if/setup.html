@@ -80,9 +80,13 @@
       </div>
       <div class="highlight">
         <pre>
-        <code class="language-html" data-lang="html">sudo service mysqld start
-sudo mysql CREATE DATABASE 'WatchfulPi';
-sudo mysql CREATE USER 'WatchfulPi' WITH SELECT,UPDATE,DELETE,DROP,ALTER,CREATE on 'WatchfulPi';</code></pre>
+        <code class="language-html" data-lang="html">sudo apt-get install php5-mysqlnd mysql-server
+sudo service mysql start
+sudo mysql --defaults-file=/etc/mysql/debian.cnf CREATE DATABASE 'WatchfulPi';
+sudo mysql --defaults-file=/etc/mysql/debian.cnf CREATE USER 'WatchfulPi' IDENTIFIED BY 'WatchfulPi';
+cat <<EOF | sudo mysql --defaults-file=/etc/mysql/debian.cnf
+GRANT ALL ON WatchfulPi.* TO 'WatchfulPi'@'%';
+EOF</code></pre>
       </div>
 
       <p>When you're ready, type the database details in here:</p>
