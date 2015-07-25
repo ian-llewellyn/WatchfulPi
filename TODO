@@ -1,4 +1,4 @@
-[ ] Test MySQL Initialisation
+[ ] Test MySQL Initialisation (.)
 [ ] Write Python connector DB inserter
 
 [ ] Test remaining sensors
@@ -10,7 +10,7 @@
 [ ] Hookup and test Arduino Local Sensors
 
 [ ] Web Service(s)
-    [ ] Decisions
+    [ ] Decisions (.)
     [ ] Builds
        [ ] Backend (DB <-> Webserver)
        [ ] JSON (Webserver <-> JS XHR)

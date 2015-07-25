@@ -86,24 +86,16 @@ sudo apt-get upgrade
 
 # install the MySQL server - you may need to provide a new password.
 sudo apt-get install mysql-server php5-mysqlnd
-# Start the database server - in case it's not running after installation.
+# Start the database server - it should already be running.
 sudo service mysqld start
 
-# If you didn't provide a password above, follow this section.
 # Create a database and associated user for WatchfulPi
-sudo mysql --defaults-file=/etc/mysql/debian.cnf CREATE DATABASE 'WatchfulPi';
-sudo mysql --defaults-file=/etc/mysql/debian.cnf CREATE USER 'WatchfulPi' IDENTIFIED BY 'WatchfulPi';
-sudo mysql GRANT ALL PRIVILEGES ON WatchfulPi.\* TO 'WatchfulPi';
-cat <<EOF | sudo mysql --defaults-file=/etc/mysql/debian.cnf
-GRANT ALL ON WatchfulPi.* TO 'WatchfulPi'@'%';
-EOF
-
-
-# If you provided a new password for the database server, follow this section.
-# Create a database and associated user for WatchfulPi
-# echo CREATE DATABASE 'WatchfulPi' | sudo mysql -p
-# echo CREATE USER 'WatchfulPi' IDENTIFIED BY \'WatchfulPi\' | sudo mysql -p
-# echo GRANT ALL PRIVILEGES ON WatchfulPi.\* TO WatchfulPi | sudo mysql -p</code></pre>
+sudo mysql --defaults-file=/etc/mysql/debian.cnf -e \
+    "CREATE DATABASE WatchfulPi"
+sudo mysql --defaults-file=/etc/mysql/debian.cnf -e \
+    "CREATE USER WatchfulPi IDENTIFIED BY 'WatchfulPi'"
+sudo mysql --defaults-file=/etc/mysql/debian.cnf -e \
+    "GRANT ALL PRIVILEGES ON WatchfulPi.* TO WatchfulPi"</code></pre>
       </div>
 
       <p>When you're ready, type the database details in here:</p>
@@ -128,13 +120,13 @@ function db_details_submit(obj) {
 }
         </script>
         <label class="sr-only" for="db_host">Database Host</label>
-        <input type="text" class="form-control" id="db_host" name="db_host" placeholder="Host" /><br />
+        <input type="text" class="form-control" id="db_host" name="db_host" placeholder="Host" value="localhost" /><br />
         <label class="sr-only" for="db_user">Database Username</label>
-        <input type="text" class="form-control" id="db_user" name="db_user" placeholder="Username" /><br />
+        <input type="text" class="form-control" id="db_user" name="db_user" placeholder="Username" value="WatchfulPi" /><br />
         <label class="sr-only" for="db_pass">Database Password</label>
-        <input type="password" class="form-control" id="db_pass" name="db_pass" placeholder="Password" /><br />
+        <input type="password" class="form-control" id="db_pass" name="db_pass" placeholder="Password" value="WatchfulPi" /><br />
         <label class="sr-only" for="db_database">Database Name</label>
-        <input type="text" class="form-control" id="db_database" name="db_database" placeholder="Database" /><br />
+        <input type="text" class="form-control" id="db_database" name="db_database" placeholder="Database" value="WatchfulPi" /><br />
         <button class="btn btn-lg btn-primary" type="submit" onClick="return db_details_submit(this.parentElement)">Go!</button>
       </form>
 
