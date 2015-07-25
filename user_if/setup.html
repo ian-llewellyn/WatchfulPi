@@ -85,16 +85,24 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # install the MySQL server - you may need to provide a new password.
-sudo apt-get install mysql-server
-# Start the database server - in case this is not running after installation.
+sudo apt-get install mysql-server php5-mysqlnd
+# Start the database server - in case it's not running after installation.
 sudo service mysqld start
 
+# If you didn't provide a password above, follow this section.
 # Create a database and associated user for WatchfulPi
-sudo mysql CREATE DATABASE 'WatchfulPi';
-# echo CREATE DATABASE 'WatchfulPi' | sudo mysql -p
-sudo mysql CREATE USER 'WatchfulPi' IDENTIFIED BY \'WatchfulPi\';
-# echo CREATE USER 'WatchfulPi' IDENTIFIED BY \'WatchfulPi\' | sudo mysql -p
+sudo mysql --defaults-file=/etc/mysql/debian.cnf CREATE DATABASE 'WatchfulPi';
+sudo mysql --defaults-file=/etc/mysql/debian.cnf CREATE USER 'WatchfulPi' IDENTIFIED BY 'WatchfulPi';
 sudo mysql GRANT ALL PRIVILEGES ON WatchfulPi.\* TO 'WatchfulPi';
+cat <<EOF | sudo mysql --defaults-file=/etc/mysql/debian.cnf
+GRANT ALL ON WatchfulPi.* TO 'WatchfulPi'@'%';
+EOF
+
+
+# If you provided a new password for the database server, follow this section.
+# Create a database and associated user for WatchfulPi
+# echo CREATE DATABASE 'WatchfulPi' | sudo mysql -p
+# echo CREATE USER 'WatchfulPi' IDENTIFIED BY \'WatchfulPi\' | sudo mysql -p
 # echo GRANT ALL PRIVILEGES ON WatchfulPi.\* TO WatchfulPi | sudo mysql -p</code></pre>
       </div>
 
