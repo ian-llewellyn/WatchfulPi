@@ -12,6 +12,9 @@
 [ ] Web Service(s)
     [ ] Decisions
     [ ] Builds
+       [ ] Backend (DB <-> Webserver)
+       [ ] JSON (Webserver <-> JS XHR)
+       [ ] JavaScript Client Library
 
 [ ] Web Interface
     [ ] framework + skeleton pages
@@ -19,7 +22,7 @@
     [ ] Systems Page
     [ ] Zones Page
 
-[ ] System Setup - Web Interface + Code-load
+[ ] System Setup - Web Interface + Code-load (.)
     [ ] welcome.html
     [ ] ...
 [ ] Import/Export Data Web Interface Utiliy

@@ -12,19 +12,27 @@ Receiver (end of Sensor Interface) ] --{ JSON }--> Connector --> Database
 ===[ JSON Message Format }===
 {"measurement": {
     "id": 23,
-    "reading": 17.2
+    "reading": 17.2,
+    "units": "C",
+    "title": "Outdoor"
 }}
 OR
 {"measurements": [
     {
         "id": 23,
         "reading": 15.7
+        "units": "C",
+        "title": "Outdoor"
     },{
         "id": 14,
         "reading": 78.4
+        "units": "RH (%)",
+        "title": "Extract"
     },{
         "id": 16,
         "reading": 49.1
+        "units": "RH (%)",
+        "title": "Intake"
     }
 ]}
 
@@ -49,11 +57,11 @@ Indoor Unit:
 
 
 ===[ Database ]===
-ID  |  Sensor Type  |   Location    |   Zone    |   System
-                        Oil Tank       Outside    Ventilation
-                        Projector     Living Rm     Nature
-                        Hall Vent      Kitchen      Heating
-                           ...           ...       Electrical
+ID  |  Sensor Type  |   Location    |   Zone    |   System    | Units |
+                        Oil Tank       Outside    Ventilation   RH (%)
+                        Projector     Living Rm     Nature        *C
+                        Hall Vent      Kitchen      Heating       cm
+                           ...           ...       Electrical    rpm
 
 ID  |   Timestamp   |   Sensor ID   |   Reading
    2015-06-28T11:01:00      23           18.7
